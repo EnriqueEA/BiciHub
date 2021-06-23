@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  final _text;
-  Button(this._text);
+  final text;
+  Button(this.text);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,8 @@ class Button extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
           ),
         ),
-      ),
-      child: Text('$_text'),
+      ),  
+      child: Text('$text'),
     );
   }
 }

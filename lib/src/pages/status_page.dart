@@ -13,12 +13,7 @@ class StatusPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  BackButtonOwn(),
-                  Expanded(child: Logo()),
-                ],
-              ),
+              _Header(),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
@@ -147,5 +142,22 @@ class StatusPage extends StatelessWidget {
         ),
       );
     }
+  }
+}
+
+class _Header extends StatelessWidget {
+  const _Header({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [BackButtonOwn(), Logo(), SizedBox()],
+      ),
+    );
   }
 }

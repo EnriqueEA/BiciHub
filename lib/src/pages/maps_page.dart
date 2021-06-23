@@ -58,7 +58,10 @@ class _MapsPageState extends State<MapsPage> {
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0),
+                  ),
                   boxShadow: [
                     BoxShadow(color: Colors.black26, blurRadius: 15.0)
                   ],
@@ -66,6 +69,7 @@ class _MapsPageState extends State<MapsPage> {
                 width: _size.width * 0.95,
                 height: _size.height * 0.35,
                 child: ListView(
+                  physics: ScrollPhysics(),
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +77,7 @@ class _MapsPageState extends State<MapsPage> {
                         Align(
                           alignment: Alignment.topCenter,
                           child: Container(
-                            margin: EdgeInsets.only(top: 20.0, bottom: 10.0),
+                            margin: EdgeInsets.only(top: 20.0, bottom: 2.0),
                             child: Text(
                               'HUBBICI WISHES YOU A GOOD DAY',
                               style: TextStyle(
@@ -87,7 +91,6 @@ class _MapsPageState extends State<MapsPage> {
                           padding: EdgeInsets.symmetric(horizontal: 20.0),
                           child: TextFieldOwn('Direction', 1),
                         ),
-                        SizedBox(height: 10.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -96,9 +99,7 @@ class _MapsPageState extends State<MapsPage> {
                             TextFieldOwn('Price', 0.2),
                           ],
                         ),
-                        Align(
-                          child: Button('Choose'),
-                        )
+                        Align(child: Button('Choose'))
                       ],
                     ),
                   ],
