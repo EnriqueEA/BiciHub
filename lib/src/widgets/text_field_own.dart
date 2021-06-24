@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class TextFieldOwn extends StatelessWidget {
   final label;
   final porcentage;
+  final h;
 
-  TextFieldOwn(this.label, this.porcentage);
+  TextFieldOwn(this.label, this.porcentage, {this.h});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class TextFieldOwn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _Label(label),
-          _TextField(porcentage),
+          _TextField(porcentage, h:0.045),
         ],
       ),
     );
@@ -22,15 +23,16 @@ class TextFieldOwn extends StatelessWidget {
 }
 
 class _TextField extends StatelessWidget {
-  const _TextField(this.porcentage);
+  const _TextField(this.porcentage, {this.h});
 
   final porcentage;
+  final h;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * porcentage,
-      height: 45.0,
+      height: MediaQuery.of(context).size.height*h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: Colors.white,
