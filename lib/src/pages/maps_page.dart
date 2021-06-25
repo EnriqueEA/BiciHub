@@ -77,7 +77,7 @@ class _MapsPageState extends State<MapsPage> {
                         Align(
                           alignment: Alignment.topCenter,
                           child: Container(
-                            margin: EdgeInsets.only(top: 20.0, bottom: 2.0),
+                            // margin: EdgeInsets.only(top: 20.0, bottom: 2.0),
                             child: Text(
                               'HUBBICI WISHES YOU A GOOD DAY',
                               style: TextStyle(

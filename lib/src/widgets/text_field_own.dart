@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TextFieldOwn extends StatelessWidget {
-  final label;
-  final porcentage;
-  final h;
+  final String label;
+  final double porcentage;
+  final double h;
 
   TextFieldOwn(this.label, this.porcentage, {this.h: 0.06});
 

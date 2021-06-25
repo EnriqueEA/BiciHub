@@ -1,4 +1,5 @@
 // import 'package:bici_hub/src/pages/home_page.dart';
+import 'package:bici_hub/src/pages/login_page.dart';
 import 'package:bici_hub/src/pages/search_page.dart';
 import 'package:bici_hub/src/pages/status_page.dart';
 import 'package:bici_hub/src/pages/maps_page.dart';
@@ -17,7 +18,7 @@ Map<String, WidgetBuilder> getRoutes() {
     "request": (_) => RequestPage(),
     "services": (_) => Services(),
     "statusC": (_) => StatusC(),
-    // "login": (_) => Login(),
+    "login": (_) => LoginPage(),
     "register": (_) => Register(),
     "search": (_) => SearchPage(),
   };

@@ -96,25 +96,3 @@ class Register extends StatelessWidget {
     );
   }
 }
-
-class _GlobalText extends StatelessWidget {
-  _GlobalText(
-    this.t,
-  );
-
-  final String t;
-  @override
-  Widget build(BuildContext context) {
-    final m = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.symmetric(
-          vertical: m.height * 0.01, horizontal: m.width * 0.08),
-      child: TextField(
-        decoration: InputDecoration(
-            labelText: t,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-            contentPadding: EdgeInsets.all(10.0)),
-      ),
-    );
-  }
-}

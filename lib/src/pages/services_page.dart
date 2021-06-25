@@ -39,14 +39,16 @@ class Services extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(
-                              left: t.width * 0.05, right: t.width * 0.05),
+                            left: t.width * 0.05,
+                            right: t.width * 0.05,
+                          ),
                           padding: EdgeInsets.all(10),
                           height: t.height * 0.07,
                           child: Text(
                             'OR',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
