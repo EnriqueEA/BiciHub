@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  final text;
-  Button(this.text);
+  final String text;
+  final double porcentage;
+  final VoidCallback onPressed;
+  Button(this.text, this.onPressed, {this.porcentage: 0.5});
 
   @override
   Widget build(BuildContext context) {
+    final _size = MediaQuery.of(context).size;
     return ElevatedButton(
-      onPressed: () {},
-      style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.pressed)) {
-            return Size.fromWidth(90);
-          }
-          return null;
-        }),
-        backgroundColor: MaterialStateProperty.all<Color>(
-          Color.fromRGBO(62, 92, 197, 1),
-        ),
-        shape: MaterialStateProperty.all<OutlinedBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-        ),
-      ),  
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        fixedSize: Size(_size.width * this.porcentage, 20),
+        primary: Color.fromRGBO(62, 92, 197, 1),
+        shape: StadiumBorder(),
+      ),
       child: Text('$text'),
     );
   }

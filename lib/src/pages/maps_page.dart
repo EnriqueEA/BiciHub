@@ -99,7 +99,7 @@ class _MapsPageState extends State<MapsPage> {
                             TextFieldOwn('Price', 0.2),
                           ],
                         ),
-                        Align(child: Button('Choose'))
+                        Align(child: Button('Choose', () {}))
                       ],
                     ),
                   ],

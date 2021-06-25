@@ -1,8 +1,8 @@
-import 'package:bici_hub/src/widgets/button.dart';
-import 'package:bici_hub/src/widgets/text_field_own.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bici_hub/src/widgets/back_button_own.dart';
+import 'package:bici_hub/src/widgets/text_field_own.dart';
+import 'package:bici_hub/src/widgets/button.dart';
 import 'package:bici_hub/src/widgets/logo.dart';
 
 class RequestPage extends StatelessWidget {
@@ -37,7 +37,7 @@ class _Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0),
+      margin: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
       padding: EdgeInsets.all(10.0),
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.8,
@@ -45,7 +45,8 @@ class _Content extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: ListView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Request',
@@ -65,7 +66,7 @@ class _Content extends StatelessWidget {
             'assets/bike_garaje.png',
             width: double.infinity,
           ),
-          Align(child: TextFieldOwn('Direction', 0.84)),
+          Align(child: TextFieldOwn('Direction', 0.83)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -73,10 +74,7 @@ class _Content extends StatelessWidget {
               TextFieldOwn('Ability', 0.4),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 7.0),
-            child: Button('Send'),
-          ),
+          Align(child: Button('Send', () => Navigator.of(context).pushNamed(''))),
         ],
       ),
     );

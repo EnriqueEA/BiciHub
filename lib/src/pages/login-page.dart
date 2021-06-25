@@ -59,11 +59,15 @@ class Login extends StatelessWidget {
                             height: 30.0,
                             onPressed: () {},
                             color: Colors.indigo[800],
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
+                            child: TextButton(
+                              onPressed: () =>
+                                  Navigator.of(context).pushNamed('services'),
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
                           ),
@@ -188,19 +192,22 @@ class Login extends StatelessWidget {
             ],
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: t.height * 0.1),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "You do not have an account?",
                   style: TextStyle(color: Colors.indigo),
                 ),
-                Text(
-                  "Sign up",
-                  style: TextStyle(
-                    color: Colors.indigo,
-                    fontWeight: FontWeight.bold,
+                TextButton(
+                  onPressed: () => Navigator.of(context).pushNamed('register'),
+                  style: ButtonStyle(),
+                  child: Text(
+                    " Sign up",
+                    style: TextStyle(
+                      color: Colors.indigo,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],

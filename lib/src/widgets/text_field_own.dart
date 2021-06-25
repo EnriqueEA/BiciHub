@@ -5,7 +5,7 @@ class TextFieldOwn extends StatelessWidget {
   final porcentage;
   final h;
 
-  TextFieldOwn(this.label, this.porcentage, {this.h});
+  TextFieldOwn(this.label, this.porcentage, {this.h: 0.06});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class TextFieldOwn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _Label(label),
-          _TextField(porcentage, h:0.045),
+          _TextField(porcentage, h),
         ],
       ),
     );
@@ -23,7 +23,7 @@ class TextFieldOwn extends StatelessWidget {
 }
 
 class _TextField extends StatelessWidget {
-  const _TextField(this.porcentage, {this.h});
+  const _TextField(this.porcentage, this.h);
 
   final porcentage;
   final h;
@@ -32,7 +32,6 @@ class _TextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * porcentage,
-      height: MediaQuery.of(context).size.height*h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: Colors.white,
@@ -40,7 +39,7 @@ class _TextField extends StatelessWidget {
       ),
       child: TextField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(12.0),
+          contentPadding: EdgeInsets.all(h * 220),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
         ),
       ),
